@@ -18,24 +18,24 @@ class UniversitySystem(val Students: List<Student> = mutableListOf())
         return UniversitySystem(Students.filterNot { it.id == StudentId })
     }
 
-    fun queryByName(StudentName: String)
+    fun queryByName(StudentName: String): UniversitySystem
     {
-
+        return UniversitySystem(Students.filter { it.name == StudentName })
     }
 
-    fun queryById(StudentId: Int)
+    fun queryById(StudentId: Int): UniversitySystem
     {
-
+        return UniversitySystem(Students.filter { it.id == StudentId })
     }
 
-    fun queryByCourse(CourseName: String)
+    fun queryByCourse(CourseName: String): UniversitySystem
     {
-
+        return UniversitySystem(Students.filter { it.course == CourseName })
     }
 
-    fun queryByAvgMarks(AvgMarks: Double)
+    fun queryByAvgMarks(AvgMarks: Double): UniversitySystem
     {
-
+        return UniversitySystem(Students.filter { it.avgMarks >= AvgMarks })
     }
 }
 
