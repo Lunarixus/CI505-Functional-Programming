@@ -11,11 +11,11 @@ fun main() {
     var updatedRegister = universityRegister.addStudent(exampleStudent)
 
     // Print every student in the register
-    updatedRegister.students.forEach { println(it) }
+    updatedRegister.printAllStudents()
 
     // Remove the student from the register
     updatedRegister = updatedRegister.removeStudentById(0)
 
     // Print every student in the register again
-    updatedRegister.students.forEach { println(it) }
+    updatedRegister.printAllStudents()
 }

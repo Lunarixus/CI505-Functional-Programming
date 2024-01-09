@@ -22,4 +22,17 @@ class UniversitySystem(val students: List<Student> = mutableListOf()) {
     fun queryByAvgMarks(avgMarks: Double): UniversitySystem { // Query Students by average marks (bigger than entered value)
         return UniversitySystem(students.filter { it.avgMarks >= avgMarks }) // Bigger than or equal to
     }
+
+    fun printAllStudents() { // Print every Student in the register
+        println("Students in register:")
+        printAllStudentsRecursive(students)
+    }
+
+    private fun printAllStudentsRecursive(students: List<Student>) { // Helper to recursively print Students
+        if (students.isNotEmpty()) {
+            val firstStudent = students.first()
+            println(firstStudent)
+            printAllStudentsRecursive(students.drop(1))
+        }
+    }
 }
